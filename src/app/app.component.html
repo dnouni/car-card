@@ -1,0 +1,27 @@
+<!-- app.component.html -->
+<div class="container mt-5">
+    <router-outlet></router-outlet>
+  
+    <app-header></app-header>
+  
+  
+    <div class="text-center mb-3">
+      <app-button 
+        class="mx-1" 
+        name="Toutes louées"
+        (clicked)="handleSwitchAll(carStatus.DISPO)">
+      </app-button>
+  
+      <app-button 
+        class="mx-1" 
+        name="Toutes disponibles"
+        (clicked)="handleSwitchAll(carStatus.INDISPO)">
+      </app-button>
+  
+    </div>
+  
+    <app-card (switchStatusClicked)="handleSwitchStatus($event)" [cars]="cars">
+  
+    </app-card>
+  
+  </div>
